@@ -1,0 +1,19 @@
+﻿@* $$$RAC: Made change to make Rules Engine Demo my start page. Remove line below once done *@
+@page "/"
+@page "/rulesEngineDemo"
+@using System.Xml.Linq
+
+<h1>Rules Engine Demo</h1>
+
+@*To Do:
+    - Review id values
+    - function name
+    - Button Text*@
+
+<textarea id="AcordPolicy" rows="10" cols="150" @bind="@AcordPolicy"></textarea>
+
+<textarea id="MyPolicy" rows="10" cols="150" @bind="@MyPolicy"></textarea>
+
+<br>
+
+<button class="btn btn-primary" @onclick="Convert">Covert To Policy Model</button>
