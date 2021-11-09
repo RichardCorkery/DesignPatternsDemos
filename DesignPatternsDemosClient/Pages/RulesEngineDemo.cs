@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace DesignPatternsDemosClient.Pages
 {
@@ -20,6 +19,8 @@ namespace DesignPatternsDemosClient.Pages
 
         private void Convert()
         {
+            //ToDo: Wrap in try / catch
+            MyPolicy = _rulesEngineDemoOrchestrator.Process(AcordPolicy);
 
             MyPolicy = AcordPolicy;
 
