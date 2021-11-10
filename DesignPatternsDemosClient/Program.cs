@@ -1,5 +1,4 @@
 using DesignPatternsDemosClient;
-using DesignPatternExamples.Services.Minis.RulesEngines.Rules;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 using DesignPatternsDemosClient.Services.Orchestrators;
@@ -16,11 +15,7 @@ builder.Services.AddTransient<IRulesEngineDemoOrchestrator, RulesEngineDemoOrche
 
 var acordConverterRules = new List<IPolicyConverterRule>
             {
-                new Policy5Converter(),
-                new Policy4Converter(),
-                new Policy2Converter(),
-                new Policy1Converter(),
-                new Policy3Converter()
+                new PolicyRootConverter()
             };
 builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(acordConverterRules));
 

@@ -1,17 +1,17 @@
 ﻿using DesignPatternsDemosClient.Models.Acord;
-using DesignPatternsDemosClient.Models.RcSharpInsurance;
+using DesignPatternsDemosClient.Models.Policy;
 
 namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
 {
-    //public class PolicyRootConverter : IPolicyConverterRule
-    //{
-    //    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
-    //    {
+    public class PolicyRootConverter : IPolicyConverterRule
+    {
+        public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+        {
 
-    //        policy.PolicyNumber = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyNumber;
+            policy.PolicyNumber = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyNumber;
 
+            return policy;
+        }
 
-    //        return policy;
-    //    }
-    //}
+    }
 }

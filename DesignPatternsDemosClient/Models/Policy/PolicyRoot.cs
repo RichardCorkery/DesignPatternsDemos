@@ -1,4 +1,4 @@
-﻿namespace DesignPatternsDemosClient.Models.RcSharpInsurance
+﻿namespace DesignPatternsDemosClient.Models.Policy
 {
     public class PolicyRoot
     {

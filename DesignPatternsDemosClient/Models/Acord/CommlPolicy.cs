@@ -7,6 +7,5 @@ namespace DesignPatternsDemosClient.Models.Acord
     {
         [XmlElement("PolicyNumber")]
         public string PolicyNumber { get; set; }
-
     }
 }

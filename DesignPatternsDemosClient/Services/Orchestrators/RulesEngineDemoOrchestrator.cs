@@ -1,5 +1,6 @@
 ﻿using System.Xml.Serialization;
 using DesignPatternsDemosClient.Models.Acord;
+using DesignPatternsDemosClient.Models.Policy;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
 namespace DesignPatternsDemosClient.Services.Orchestrators
@@ -7,7 +8,7 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
     public interface IRulesEngineDemoOrchestrator
     {
         //ToDo: Better method name
-        public string Process(string inputPolicy);
+        public PolicyRoot Process(string inputPolicy);
     }
     public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
     {
@@ -17,13 +18,13 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
         {
             _acordConverterRulesEngine = acordConverterRulesEngine;
         }
-        public string Process(string inputPolicy)
+        public PolicyRoot Process(string inputPolicy)
         {
             var xml = inputPolicy;
 
-            Acord a = null;
+            Acord acord = null;
 
-            //Converter or Extension method or reusable converter?
+            //ToDo: Move to: Converter or Extension method or reusable converter?
 
                 var x = new XmlSerializer(typeof(Acord));
                 using (var sr = new StringReader(xml))
@@ -31,7 +32,7 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
 
                     try
                     {
-                        a = x.Deserialize(sr) as Acord;
+                        acord = x.Deserialize(sr) as Acord;
                     }
                     catch (Exception ex)
                     {
@@ -39,7 +40,7 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
                     }
                 }
 
-                return _acordConverterRulesEngine.ToPolicy(inputPolicy);
+                return _acordConverterRulesEngine.ToPolicy(acord);
         }
     }
 }

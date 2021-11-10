@@ -1,7 +1,10 @@
-﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
+﻿using DesignPatternsDemosClient.Models.Acord;
+using DesignPatternsDemosClient.Models.Policy;
+
+namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
 {
     public interface IPolicyConverterRule
     {
-        public string Convert(string inputPolicy, string acordPolicy);
+        public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy);
     }
 }

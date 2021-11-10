@@ -2,7 +2,7 @@
 
 namespace DesignPatternsDemosClient.Models.Acord
 {
-    [XmlRoot("Addr", Namespace = "http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/")]
+    [XmlRoot("Addr")]
     public class Addr
     {
         [XmlElement("Addr1")]
