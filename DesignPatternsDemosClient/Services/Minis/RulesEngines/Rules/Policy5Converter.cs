@@ -1,8 +1,8 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
 {
-    public class Acord4Converter : IAcordConverterRule
+    public class Policy5Converter : IPolicyConverterRule
     {
-        public string Convert(string inputPolicy, string acordPolicy)
+        public  string Convert(string inputPolicy, string acordPolicy)
         {
             return acordPolicy;
         }

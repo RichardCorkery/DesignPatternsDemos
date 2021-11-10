@@ -1,17 +1,22 @@
 ﻿using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
 namespace DesignPatternsDemosClient.Services.Minis.RulesEngines
-{
-    public class AcordConverterRulesEngine: IAcordConverterRulesEngine
+{    public interface IPolicyConverterRulesEngine
     {
-        readonly List<IAcordConverterRule> _rules = new List<IAcordConverterRule>();
+        //ToDo: Method name ToPolicy or ToPolicyModel?
+        public string ToPolicy(string inputPolicy);
+    }
 
-        public AcordConverterRulesEngine(IEnumerable<IAcordConverterRule> rules)
+    public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
+    {
+        readonly List<IPolicyConverterRule> _rules = new();
+
+        public PolicyConverterRulesEngine(IEnumerable<IPolicyConverterRule> rules)
         {
             _rules.AddRange(rules);
         }
 
-        public string ToAcord(string inputPolicy)
+        public string ToPolicy(string inputPolicy)
         {
             string acordPolicy = string.Empty;
 

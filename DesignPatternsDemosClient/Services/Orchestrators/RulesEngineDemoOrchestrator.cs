@@ -6,13 +6,14 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
 {
     public interface IRulesEngineDemoOrchestrator
     {
+        //ToDo: Better method name
         public string Process(string inputPolicy);
     }
     public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
     {
-        private IAcordConverterRulesEngine _acordConverterRulesEngine;
+        private IPolicyConverterRulesEngine _acordConverterRulesEngine;
 
-        public RulesEngineDemoOrchestrator(IAcordConverterRulesEngine acordConverterRulesEngine)
+        public RulesEngineDemoOrchestrator(IPolicyConverterRulesEngine acordConverterRulesEngine)
         {
             _acordConverterRulesEngine = acordConverterRulesEngine;
         }
@@ -38,7 +39,7 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
                     }
                 }
 
-                return _acordConverterRulesEngine.ToAcord(inputPolicy);
+                return _acordConverterRulesEngine.ToPolicy(inputPolicy);
         }
     }
 }
