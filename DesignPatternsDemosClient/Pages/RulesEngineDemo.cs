@@ -27,7 +27,9 @@ namespace DesignPatternsDemosClient.Pages
             //ToDo: Wrap in try / catch
             var policy = _rulesEngineDemoOrchestrator.Process(AcordPolicy);
 
-            MyPolicy = JsonSerializer.Serialize(policy);
+            JsonSerializerOptions options = new JsonSerializerOptions();
+            options.WriteIndented = true; //Pretty print using indent, white space, new line, etc.
+            MyPolicy = JsonSerializer.Serialize(policy, options);
 
         }
     }
