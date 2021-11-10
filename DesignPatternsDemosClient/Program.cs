@@ -1,5 +1,4 @@
 using DesignPatternsDemosClient;
-using DesignPatternExamples.Services.Minis.RulesEngines.Rules;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 using DesignPatternsDemosClient.Services.Orchestrators;
@@ -14,14 +13,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddTransient<IRulesEngineDemoOrchestrator, RulesEngineDemoOrchestrator>();
 
-var acordConverterRules = new List<IAcordConverterRule>
+var acordConverterRules = new List<IPolicyConverterRule>
             {
-                new Acord5Converter(),
-                new Acord4Converter(),
-                new Acord2Converter(),
-                new Acord1Converter(),
-                new Acord3Converter()
+                new PolicyRootConverter()
             };
-builder.Services.AddTransient<IAcordConverterRulesEngine>(sp => new AcordConverterRulesEngine(acordConverterRules));
+builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(acordConverterRules));
 
 await builder.Build().RunAsync();

@@ -2,7 +2,7 @@
 
 namespace DesignPatternsDemosClient.Models.Acord
 {
-    [XmlRoot("Construction", Namespace = "http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/")]
+    [XmlRoot("Construction")]
 
     public class Construction
     {

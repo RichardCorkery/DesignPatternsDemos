@@ -2,7 +2,7 @@
 
 namespace DesignPatternsDemosClient.Models.Acord
 {
-    [XmlRoot("CommlSubLocation", Namespace = "http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/")]
+    [XmlRoot("CommlSubLocation")]
     public class CommlSubLocation
     {
         [XmlAttribute("id")]

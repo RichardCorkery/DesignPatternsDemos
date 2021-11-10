@@ -1,11 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace DesignPatternsDemosClient.Models.Acord
 {
-    [XmlRoot("CommlPkgPolicyAddRq", Namespace = "http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/")]
+    [XmlRoot("CommlPkgPolicyAddRq")]
     public class CommlPkgPolicyAddRq
     {
+        //ToDo: Review if this is Acord
+        [XmlElement("RqUID")]
+        public Guid RqUID { get; set; }
+
+        [XmlElement("CommlPolicy")]
+        public CommlPolicy CommlPolicy { get; set; }
+
         [XmlElement("Location")]
         public List<Location> Locations { get; set; }
 
