@@ -7,5 +7,11 @@ namespace DesignPatternsDemosClient.Models.Acord
     {
         [XmlElement("PolicyNumber")]
         public string PolicyNumber { get; set; }
+
+        [XmlElement("ContractTerm")]
+        public ContractTerm ContractTerm { get; set; }
+
+        [XmlElement("CurrentTermAmt")]
+        public CurrentTermAmt CurrentTermAmt { get; set; }
     }
 }
