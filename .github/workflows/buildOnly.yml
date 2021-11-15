@@ -1,11 +1,11 @@
 #Basic Build Only Workflow
 name: Build Only
 
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
+ on:
+   push:
+     branches: [ main ]
+   pull_request:
+     branches: [ main ]
 
 jobs:
   build:
