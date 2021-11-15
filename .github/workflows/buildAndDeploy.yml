@@ -18,8 +18,12 @@ jobs:
     # dotnet build and publish
     - name: Build with dotnet
       run: dotnet build --configuration Release
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal  
+      with:
+        projects: '**/design-patterns-demos\DesignPatternsDemosClient.Tests/DesignPatternsDemosClient.Tests.csproj'
+      
     - name: dotnet publish
       run: |
         dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
