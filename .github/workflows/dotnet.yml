@@ -1,11 +1,11 @@
 #Basic Build Only Workflow
-name: .NET
+name: Build Only
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main2 ]
   pull_request:
-    branches: [ main ]
+    branches: [ main2 ]
 
 jobs:
   build:
