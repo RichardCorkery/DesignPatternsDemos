@@ -16,7 +16,7 @@ jobs:
         dotnet-version: 6.0.x
         
     - name: Restore dependencies
-      run: dotnet restor
+      run: dotnet restore
     
     # dotnet build and publish
     - name: Build with dotnet
