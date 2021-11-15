@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -19,12 +19,13 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release
       
-    - name: Test
-      run: dotnet test --no-build --verbosity normal  
+    #- name: Test
+    #  run: dotnet test --no-build --verbosity normal  
       
     - name: dotnet publish
       run: |
         dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
+        
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v1
       with: 
