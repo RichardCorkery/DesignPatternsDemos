@@ -13,10 +13,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddTransient<IRulesEngineDemoOrchestrator, RulesEngineDemoOrchestrator>();
 
-var acordConverterRules = new List<IPolicyConverterRule>
+var policyConverterRules = new List<IPolicyConverterRule>
             {
                 new PolicyRootConverter()
             };
-builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(acordConverterRules));
+builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(policyConverterRules));
 
 await builder.Build().RunAsync();

@@ -8,7 +8,7 @@ namespace DesignPatternsDemosClient.Models.Acord
     {
         //ToDo: Review if this is Acord
         [XmlElement("RqUID")]
-        public Guid RqUID { get; set; }
+        public Guid RqUid { get; set; }
 
         [XmlElement("CommlPkgPolicyAddRq")]
         public CommlPkgPolicyAddRq CommlPkgPolicyAddRq { get; set; }

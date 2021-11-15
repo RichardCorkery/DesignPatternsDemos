@@ -9,7 +9,7 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
         {
             var insuranceSvcRq = inputPolicy.InsuranceSvcRq;
 
-            policy.TransactionId = insuranceSvcRq.RqUID;
+            policy.TransactionId = insuranceSvcRq.RqUid;
             policy.PolicyNumber = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyNumber;
             policy.EffectiveDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.EffectiveDt.GetValueOrDefault();
             policy.ExpirationDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.ExpirationDt.GetValueOrDefault();
