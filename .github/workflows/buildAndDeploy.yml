@@ -21,8 +21,6 @@ jobs:
       
     - name: Test
       run: dotnet test --no-build --verbosity normal  
-      with:
-        projects: '**/design-patterns-demos\DesignPatternsDemosClient.Tests/DesignPatternsDemosClient.Tests.csproj'
       
     - name: dotnet publish
       run: |
