@@ -12,5 +12,7 @@
         //public DateOnly ExpirationDate { get; set; }
         
         public decimal Premium { get; set; }
+
+        public Insured Insured { get; set; }
     }
 }
