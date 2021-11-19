@@ -17,5 +17,9 @@ namespace DesignPatternsDemosClient.Models.Acord
 
         [XmlElement("CommlSubLocation")]
         public List<CommlSubLocation> CommlSubLocations { get; set; }
+
+        [XmlElement("InsuredOrPrincipal")]
+        public InsuredOrPrincipal InsuredOrPrincipal { get; set; }
+
     }
 }
