@@ -26,6 +26,9 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
 
             //ToDo: Move to: Converter or Extension method or reusable converter?
 
+            try
+            {
+
                 var x = new XmlSerializer(typeof(Acord));
                 using (var sr = new StringReader(xml))
                 {
@@ -39,8 +42,13 @@ namespace DesignPatternsDemosClient.Services.Orchestrators
                         var y = ex;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                var x = ex.Message;
+            }
 
-                return _acordConverterRulesEngine.ToPolicy(acord);
+            return _acordConverterRulesEngine.ToPolicy(acord);
         }
     }
 }

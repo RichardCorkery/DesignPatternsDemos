@@ -9,6 +9,20 @@ namespace DesignPatternsDemosClient.Models.Acord
         [XmlElement("RqUID")]
         public Guid RqUID { get; set; }
 
+        //ToDo: Implement Date Only
+        [XmlElement("TransactionRequestDt")]
+        public DateTime TransactionRequestDt { get; set; }
+
+        //ToDo Make sure all properties follow my naming standards
+        [XmlElement("BroadLOBCd")]
+        public string BroadLOBCd { get; set; }
+
+        [XmlElement("InsuredOrPrincipal")]
+        public InsuredOrPrincipal InsuredOrPrincipal { get; set; }
+
+        [XmlElement("Producer")]
+        public Producer Producer { get; set; }
+
         [XmlElement("CommlPolicy")]
         public CommlPolicy CommlPolicy { get; set; }
 
@@ -18,8 +32,7 @@ namespace DesignPatternsDemosClient.Models.Acord
         [XmlElement("CommlSubLocation")]
         public List<CommlSubLocation> CommlSubLocations { get; set; }
 
-        [XmlElement("InsuredOrPrincipal")]
-        public InsuredOrPrincipal InsuredOrPrincipal { get; set; }
+
 
     }
 }

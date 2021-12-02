@@ -8,5 +8,8 @@ namespace DesignPatternsDemosClient.Models.Acord
         [XmlElement("CommlName")]
         public CommlName CommlName { get; set; }
 
+        [XmlElement("TaxIdentity")]
+        public TaxIdentity TaxIdentity { get; set; }
+
     }
 }
