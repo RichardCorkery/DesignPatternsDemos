@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <ACORD xmlns:q1='http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/'>
+	<SignonRq>
+		<ClientApp>
+			<Org>InsuaSphere</Org>
+			<Name>PolicyImporter</Name>
+			<Version>1.1</Version>
+		</ClientApp>
+	</SignonRq>
 	<InsuranceSvcRq>
 		<RqUID>20ec3051-6bde-47d5-9f5a-c8f485873cb4</RqUID>
 		<CommlPkgPolicyAddRq>
@@ -78,6 +85,11 @@
 				<ContractTerm>
 					<EffectiveDt>2021-11-02</EffectiveDt>
 					<ExpirationDt>2022-11-02</ExpirationDt>
+					<DurationPeriod>
+						<NumUnits>
+							12
+						</NumUnits>
+					</DurationPeriod>
 				</ContractTerm>
 				<CurrentTermAmt>
 					<Amt>22698</Amt>

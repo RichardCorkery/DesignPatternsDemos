@@ -2,10 +2,16 @@
 
 namespace DesignPatternsDemosClient.Models.Acord
 {
-    [XmlRoot("TaxIdentity")]
-    public class TaxIdentity
-    {
-        [XmlElement("StateProvCd")]
-        public string StateProvCd { get; set; }
+    [XmlRoot("ClientApp")]
+    public class ClientApp
+    { 
+        [XmlElement("Org")]
+        public string Org { get; set; }
+
+        [XmlElement("Name")]
+        public string Name { get; set; }
+
+        [XmlElement("Version")]
+        public string Version { get; set; }
     }
 }

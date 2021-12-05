@@ -26,7 +26,7 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
 
             policy.Term = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.DurationPeriod.NumUnits;
 
-
+            //ToDo: Review what is the best way to test for null? ?. statement? 
             policy.PrimaryState = insuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo.NameInfo.TaxIdentity.StateProvCd;
             policy.TransactionId = insuranceSvcRq.CommlPkgPolicyAddRq.RqUID;
             policy.TransactionDate = insuranceSvcRq.CommlPkgPolicyAddRq.TransactionRequestDt;

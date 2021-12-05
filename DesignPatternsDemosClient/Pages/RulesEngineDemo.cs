@@ -14,7 +14,7 @@ namespace DesignPatternsDemosClient.Pages
             try
             {
 
-                var acordXml = await Http.GetStringAsync("sample-data/AcordPolicy.xml");
+                var acordXml = await Http.GetStringAsync("sample-data/acordPolicy.xml");
 
                 var acordXdoc = XDocument.Parse(acordXml);
 
@@ -41,13 +41,20 @@ namespace DesignPatternsDemosClient.Pages
 
         private void Convert()
         {
-            //ToDo: Wrap in try / catch
-            var policy = _rulesEngineDemoOrchestrator.Process(AcordPolicy);
 
-            JsonSerializerOptions options = new JsonSerializerOptions();
-            options.WriteIndented = true; //Pretty print using indent, white space, new line, etc.
-            MyPolicy = JsonSerializer.Serialize(policy, options);
+            try
+            {
+                //ToDo: Wrap in try / catch
+                var policy = _rulesEngineDemoOrchestrator.Process(AcordPolicy);
 
+                JsonSerializerOptions options = new JsonSerializerOptions();
+                options.WriteIndented = true; //Pretty print using indent, white space, new line, etc.
+                MyPolicy = JsonSerializer.Serialize(policy, options);
+            }
+            catch(Exception ex)
+            {
+                var x = ex.Message;
+            }
         }
     }
 }
