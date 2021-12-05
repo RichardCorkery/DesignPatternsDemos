@@ -2,10 +2,9 @@
 using DesignPatternsDemosClient.Models.Policy;
 
 //ToDo: Fix Namespaces
-namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
+namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+
+public interface IPolicyConverterRule
 {
-    public interface IPolicyConverterRule
-    {
-        public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy);
-    }
+    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy);
 }

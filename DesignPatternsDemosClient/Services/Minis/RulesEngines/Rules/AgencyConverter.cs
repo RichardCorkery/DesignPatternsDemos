@@ -15,20 +15,19 @@ using DesignPatternsDemosClient.Models.Policy;
 //  - Note these on the ReadMe file?
 //  - Page Title
 
-namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
+namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+
+public class AgencyConverter : IPolicyConverterRule
 {
-    public class AgencyConverter : IPolicyConverterRule
+    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
-        public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
-        {
-            var agency = new Agency();
+        var agency = new Agency();
 
-            //Note: There are many more fields that could be mapped for Agency including: Name, Address, Company Information and etc
-            agency.Id = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.Producer.ItemIdInfo.AgencyId;
+        //Note: There are many more fields that could be mapped for Agency including: Name, Address, Company Information and etc
+        agency.Id = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.Producer.ItemIdInfo.AgencyId;
 
-            policy.Agency = agency;
+        policy.Agency = agency;
 
-            return policy;
-        }
+        return policy;
     }
 }
