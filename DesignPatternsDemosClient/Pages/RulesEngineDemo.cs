@@ -44,7 +44,6 @@ namespace DesignPatternsDemosClient.Pages
 
             try
             {
-                //ToDo: Wrap in try / catch
                 var policy = _rulesEngineDemoOrchestrator.Process(AcordPolicy);
 
                 JsonSerializerOptions options = new JsonSerializerOptions();
@@ -53,6 +52,7 @@ namespace DesignPatternsDemosClient.Pages
             }
             catch(Exception ex)
             {
+                //ToDo: What do you want to do here?
                 var x = ex.Message;
             }
         }

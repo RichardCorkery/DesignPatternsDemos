@@ -19,7 +19,6 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules
 {
     public class AgencyConverter : IPolicyConverterRule
     {
-        
         public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
         {
             var agency = new Agency();

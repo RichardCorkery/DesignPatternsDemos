@@ -1,11 +1,10 @@
 ﻿using System.Xml.Serialization;
 
-namespace DesignPatternsDemosClient.Models.Acord
+namespace DesignPatternsDemosClient.Models.Acord;
+
+[XmlRoot("TaxIdentity")]
+public class TaxIdentity
 {
-    [XmlRoot("TaxIdentity")]
-    public class TaxIdentity
-    {
-        [XmlElement("StateProvCd")]
-        public string StateProvCd { get; set; }
-    }
+    [XmlElement("StateProvCd")]
+    public string StateProvCd { get; set; }
 }
