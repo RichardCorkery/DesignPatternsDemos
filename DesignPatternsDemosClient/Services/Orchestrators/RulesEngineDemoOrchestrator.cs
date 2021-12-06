@@ -3,44 +3,50 @@ using DesignPatternsDemosClient.Models.Acord;
 using DesignPatternsDemosClient.Models.Policy;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
-namespace DesignPatternsDemosClient.Services.Orchestrators
+namespace DesignPatternsDemosClient.Services.Orchestrators;
+public interface IRulesEngineDemoOrchestrator
 {
-    public interface IRulesEngineDemoOrchestrator
+    //ToDo: Better method name
+    public PolicyRoot Process(string inputPolicy);
+}
+public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
+{
+    private IPolicyConverterRulesEngine _acordConverterRulesEngine;
+
+    public RulesEngineDemoOrchestrator(IPolicyConverterRulesEngine acordConverterRulesEngine)
     {
-        //ToDo: Better method name
-        public PolicyRoot Process(string inputPolicy);
+        _acordConverterRulesEngine = acordConverterRulesEngine;
     }
-    public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
+    public PolicyRoot Process(string inputPolicy)
     {
-        private IPolicyConverterRulesEngine _acordConverterRulesEngine;
+        var xml = inputPolicy;
 
-        public RulesEngineDemoOrchestrator(IPolicyConverterRulesEngine acordConverterRulesEngine)
+        Acord acord = null;
+
+        //ToDo: Move to: Converter or Extension method or reusable converter?
+
+        try
         {
-            _acordConverterRulesEngine = acordConverterRulesEngine;
-        }
-        public PolicyRoot Process(string inputPolicy)
-        {
-            var xml = inputPolicy;
 
-            Acord acord = null;
+            var x = new XmlSerializer(typeof(Acord));
+            using (var sr = new StringReader(xml))
+            {
 
-            //ToDo: Move to: Converter or Extension method or reusable converter?
-
-                var x = new XmlSerializer(typeof(Acord));
-                using (var sr = new StringReader(xml))
+                try
                 {
-
-                    try
-                    {
-                        acord = x.Deserialize(sr) as Acord;
-                    }
-                    catch (Exception ex)
-                    {
-                        var y = ex;
-                    }
+                    acord = x.Deserialize(sr) as Acord;
                 }
-
-                return _acordConverterRulesEngine.ToPolicy(acord);
+                catch (Exception ex)
+                {
+                    var y = ex;
+                }
+            }
         }
+        catch (Exception ex)
+        {
+            var x = ex.Message;
+        }
+
+        return _acordConverterRulesEngine.ToPolicy(acord);
     }
 }

@@ -16,7 +16,8 @@ builder.Services.AddTransient<IRulesEngineDemoOrchestrator, RulesEngineDemoOrche
 var policyConverterRules = new List<IPolicyConverterRule>
             {
                 new PolicyRootConverter(), 
-                new InsuredConverter()
+                new InsuredConverter(), 
+                new AgencyConverter()
             };
 builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(policyConverterRules));
 

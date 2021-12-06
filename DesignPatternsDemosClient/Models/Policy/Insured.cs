@@ -1,10 +1,9 @@
-﻿namespace DesignPatternsDemosClient.Models.Policy
-{
-    public class Insured
-    {
-        //$$$RAC" Better name?
-        public string FullName { get; set; }
+﻿namespace DesignPatternsDemosClient.Models.Policy;
 
-        public Address Address { get; set; }
-    }
+public class Insured
+{
+    //$$$RAC" Better name?
+    public string FullName { get; set; }
+
+    public Address Address { get; set; }
 }

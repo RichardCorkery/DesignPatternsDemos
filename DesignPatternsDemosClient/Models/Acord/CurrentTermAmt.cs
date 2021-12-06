@@ -1,11 +1,10 @@
 ﻿using System.Xml.Serialization;
 
-namespace DesignPatternsDemosClient.Models.Acord
+namespace DesignPatternsDemosClient.Models.Acord;
+
+[XmlRoot("CurrentTermAmt")]
+public class CurrentTermAmt
 {
-    [XmlRoot("CurrentTermAmt")]
-    public class CurrentTermAmt
-    {
-        [XmlElement("Amt")]
-        public decimal? Amt { get; set; }
-    }
+    [XmlElement("Amt")]
+    public decimal? Amt { get; set; }
 }

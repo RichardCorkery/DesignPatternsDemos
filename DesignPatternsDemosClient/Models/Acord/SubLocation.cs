@@ -1,15 +1,14 @@
 ﻿using System.Xml.Serialization;
 
-namespace DesignPatternsDemosClient.Models.Acord
+namespace DesignPatternsDemosClient.Models.Acord;
+
+[XmlRoot("SubLocation")]
+public class SubLocation
 {
-    [XmlRoot("SubLocation")]
-    public class SubLocation
-    {
-        [XmlAttribute("id")]
-        public string Id { get; set; }
+    [XmlAttribute("id")]
+    public string Id { get; set; }
 
-        [XmlElement("SubLocationName")]
-        public string SubLocationName { get; set; }
+    [XmlElement("SubLocationName")]
+    public string SubLocationName { get; set; }
 
-    }
 }
