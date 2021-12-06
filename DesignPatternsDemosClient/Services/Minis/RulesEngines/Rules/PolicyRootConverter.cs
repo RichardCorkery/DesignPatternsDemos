@@ -10,7 +10,7 @@ public class PolicyRootConverter : IPolicyConverterRule
     {
         var insuranceSvcRq = inputPolicy.InsuranceSvcRq;
 
-        policy.RequestId = insuranceSvcRq.RqUid;
+        policy.RequestId = insuranceSvcRq.RqUId;
 
         policy.PolicyNumber = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyNumber;
             

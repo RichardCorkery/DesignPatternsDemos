@@ -6,7 +6,7 @@ namespace DesignPatternsDemosClient.Models.Acord;
 public class InsuranceSvcRq
 {
     [XmlElement("RqUID")]
-    public Guid RqUid { get; set; }
+    public Guid RqUId { get; set; }
 
     [XmlElement("CommlPkgPolicyAddRq")]
     public CommlPkgPolicyAddRq CommlPkgPolicyAddRq { get; set; }
