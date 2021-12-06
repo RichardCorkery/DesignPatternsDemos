@@ -1,6 +1,4 @@
-﻿using System.Xml.Serialization;
-
-namespace DesignPatternsDemosClient.Models.Acord;
+﻿namespace DesignPatternsDemosClient.Models.Acord;
 
 [XmlRoot("NameInfo")]
 public class NameInfo 

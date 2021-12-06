@@ -1,6 +1,4 @@
-﻿using DesignPatternsDemosClient.Models.Acord;
-using DesignPatternsDemosClient.Models.Policy;
-using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+﻿using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
 namespace DesignPatternsDemosClient.Services.Minis.RulesEngines;
 

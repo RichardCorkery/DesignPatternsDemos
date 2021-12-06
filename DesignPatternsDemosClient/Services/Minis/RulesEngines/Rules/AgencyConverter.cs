@@ -1,11 +1,4 @@
-﻿using DesignPatternsDemosClient.Models.Acord;
-using DesignPatternsDemosClient.Models.Policy;
-
-//ToDo: Set up: 
-//  - Global using statements
-//  - File-scoped Namespaces
-
-//ToDo: ThrowIfNull:
+﻿//ToDo: ThrowIfNull:
 //  - Can this this new feature be used?
 //      - If so, where 
 //      - Implement
