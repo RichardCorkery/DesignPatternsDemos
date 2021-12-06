@@ -10,4 +10,7 @@ public class GeneralPartyInfo
     //$$$RAC: Make everything nullable
     public Addr Addr { get; set; }
 
+    [XmlElement("Communication")]
+    public List<Communication> Communications { get; set; }
+
 }

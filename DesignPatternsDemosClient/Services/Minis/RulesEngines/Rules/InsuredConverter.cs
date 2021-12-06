@@ -4,17 +4,29 @@ public class InsuredConverter : IPolicyConverterRule
 {
     public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
-        var insured = new Insured();
-
         var generalPartyInfo = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo;
+        
+        //ToDo: Review how can this be not null?
+        if(generalPartyInfo is null) return policy;
+
+        var insured = new Insured();
 
         insured.FullName = generalPartyInfo.NameInfo.CommlName.CommercialName;
 
         //ToDo: What if anything this null?
-        //insured.PhoneHome = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Business").PhoneNumber
-        //insured.PhoneWork = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Home").PhoneNumber
-        //insured.EmailAddress = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Home").EmailAddr
-        
+        var communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Home");
+        if (communication != null)
+        {
+            insured.PhoneHome = communication.PhoneNumber;
+            insured.EmailAddress = communication.EmailAddr;
+        }
+
+        communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Business");
+        if (communication != null)
+        {
+            insured.PhoneWork = communication.PhoneNumber;
+        }
+
         //Note: To conform with the Single Responsibility Principle I would normally move the Address processing to it's own rule 
         insured.Address = new Address
         {

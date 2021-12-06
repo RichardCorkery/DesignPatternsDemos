@@ -43,9 +43,20 @@
 							<SystemId>9752258</SystemId>
 						</ItemIdInfo>
 					</Addr>
+
+					<Communication>
+						<CommunicationUseCd>Home</CommunicationUseCd>
+						<PhoneNumber>2155551111</PhoneNumber>
+						<EmailAddr>emailAddress@home.com</EmailAddr>
+					</Communication>
+					<Communication>
+						<CommunicationUseCd>Business</CommunicationUseCd>
+						<PhoneNumber>6095552222</PhoneNumber>
+					</Communication>
+
 				</GeneralPartyInfo>
 				<InsuredOrPrincipalInfo>
-					<InsuredOrPrincipalRoleCd> Insured </InsuredOrPrincipalRoleCd>
+					<InsuredOrPrincipalRoleCd>Insured</InsuredOrPrincipalRoleCd>
 					<BusinessInfo>
 						<OperationsDesc> BUILDING OWNER - LRO </OperationsDesc>
 					</BusinessInfo>
