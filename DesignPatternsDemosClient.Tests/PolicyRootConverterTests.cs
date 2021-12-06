@@ -1,9 +1,3 @@
-using Xunit;
-using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
-using DesignPatternsDemosClient.Models.Acord;
-using System;
-using DesignPatternsDemosClient.Models.Policy;
-
 namespace DesignPatternsDemosClient.Tests;
 
 public class PolicyRootConverterTests
@@ -29,7 +23,7 @@ public class PolicyRootConverterTests
                 {
                     RqUId = new Guid(),
                     TransactionRequestDt = new DateTime(2021, 7, 15),
-                    BroadLobCd = "C",
+                    BroadLobCd = "P",
                     CommlPolicy = new CommlPolicy 
                     {   
                         PolicyNumber = "Policy Number",

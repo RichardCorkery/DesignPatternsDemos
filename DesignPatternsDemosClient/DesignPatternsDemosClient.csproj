@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\sample-data\acordPolicy.xml">
+    <Content Remove="wwwroot\sample-data\acordPolicyV2.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\sample-data\acordPolicyV2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

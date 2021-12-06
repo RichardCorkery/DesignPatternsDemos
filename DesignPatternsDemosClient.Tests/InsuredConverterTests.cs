@@ -1,7 +1,3 @@
-using Xunit;
-using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
-using DesignPatternsDemosClient.Models.Acord;
-
 namespace DesignPatternsDemosClient.Tests;
 public class InsuredConverterTests
 {
