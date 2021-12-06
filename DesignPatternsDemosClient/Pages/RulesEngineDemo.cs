@@ -12,7 +12,7 @@ public partial class RulesEngineDemo
         try
         {
 
-            var acordXml = await Http.GetStringAsync("sample-data/acordPolicyV2.xml");
+            var acordXml = await Http.GetStringAsync("sample-data/acordPolicy.xml");
 
             var acordXdoc = XDocument.Parse(acordXml);
 
