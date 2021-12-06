@@ -2,32 +2,32 @@
 using DesignPatternsDemosClient.Models.Policy;
 using DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
-namespace DesignPatternsDemosClient.Services.Minis.RulesEngines
-{    public interface IPolicyConverterRulesEngine
+namespace DesignPatternsDemosClient.Services.Minis.RulesEngines;
+
+public interface IPolicyConverterRulesEngine
+{
+    //ToDo: Method name ToPolicy or ToPolicyModel?
+    public PolicyRoot ToPolicy(Acord inputPolicy);
+}
+
+public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
+{
+    readonly List<IPolicyConverterRule> _rules = new();
+
+    public PolicyConverterRulesEngine(IEnumerable<IPolicyConverterRule> rules)
     {
-        //ToDo: Method name ToPolicy or ToPolicyModel?
-        public PolicyRoot ToPolicy(Acord inputPolicy);
+        _rules.AddRange(rules);
     }
 
-    public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
+    public PolicyRoot ToPolicy(Acord inputPolicy)
     {
-        readonly List<IPolicyConverterRule> _rules = new();
+        var policy = new PolicyRoot();
 
-        public PolicyConverterRulesEngine(IEnumerable<IPolicyConverterRule> rules)
+        foreach (var rule in _rules)
         {
-            _rules.AddRange(rules);
+            policy = rule.Convert(inputPolicy, policy);
         }
 
-        public PolicyRoot ToPolicy(Acord inputPolicy)
-        {
-            var policy = new PolicyRoot();
-
-            foreach (var rule in _rules)
-            {
-                policy = rule.Convert(inputPolicy, policy);
-            }
-
-            return policy;
-        }
+        return policy;
     }
 }
