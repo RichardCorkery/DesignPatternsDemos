@@ -1,7 +1,4 @@
-﻿using DesignPatternsDemosClient.Models.Acord;
-using DesignPatternsDemosClient.Models.Policy;
-
-namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
 public class PolicyRootConverter : IPolicyConverterRule
 {

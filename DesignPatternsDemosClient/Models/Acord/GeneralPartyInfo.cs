@@ -1,6 +1,4 @@
-﻿using System.Xml.Serialization;
-
-namespace DesignPatternsDemosClient.Models.Acord;
+﻿namespace DesignPatternsDemosClient.Models.Acord;
 
 [XmlRoot("GeneralPartyInfo")]
 public class GeneralPartyInfo 
@@ -11,5 +9,8 @@ public class GeneralPartyInfo
     [XmlElement("Addr")]
     //$$$RAC: Make everything nullable
     public Addr Addr { get; set; }
+
+    [XmlElement("Communication")]
+    public List<Communication> Communications { get; set; }
 
 }

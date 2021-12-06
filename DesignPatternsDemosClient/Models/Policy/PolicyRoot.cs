@@ -7,7 +7,6 @@ public class PolicyRoot
         
     public string PolicyNumber { get; set; }
 
-    public string Description { get; set; }
     public DateTime EffectiveDate { get; set; }
     public DateTime ExpirationDate { get; set; }
 
