@@ -6,7 +6,6 @@ public class CommlPkgPolicyAddRq
     [XmlElement("RqUID")]
     public Guid RqUId { get; set; }
 
-    //ToDo: Implement Date Only
     [XmlElement("TransactionRequestDt")]
     public DateTime TransactionRequestDt { get; set; }
         

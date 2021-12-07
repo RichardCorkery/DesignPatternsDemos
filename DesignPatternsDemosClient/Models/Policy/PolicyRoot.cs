@@ -8,12 +8,9 @@ public class PolicyRoot
     public string PolicyNumber { get; set; }
 
     public DateTime EffectiveDate { get; set; }
+
     public DateTime ExpirationDate { get; set; }
-
-    //ToDo: Revisit DateOnly
-    //public DateOnly EffectiveDate { get; set; }
-    //public DateOnly ExpirationDate { get; set; }
-
+    
     public int Term { get; set; }
 
     public string PrimaryState { get; set; }

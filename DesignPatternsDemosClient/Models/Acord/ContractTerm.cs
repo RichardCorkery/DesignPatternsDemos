@@ -2,8 +2,7 @@
 
 [XmlRoot("ContractTerm")]
 public class ContractTerm
-{ 
-    //ToDo: Review DateTime?
+{
     [XmlElement("EffectiveDt", DataType = "date")]
     public DateTime? EffectiveDt { get; set; }
 

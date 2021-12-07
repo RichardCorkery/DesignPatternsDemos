@@ -17,10 +17,6 @@ public class PolicyRootConverter : IPolicyConverterRule
         policy.EffectiveDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.EffectiveDt.GetValueOrDefault();
         policy.ExpirationDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.ExpirationDt.GetValueOrDefault();
 
-        //ToDo: Revisit
-        //policy.EffectiveDate = DateOnly.FromDateTime(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.EffectiveDt.GetValueOrDefault() );
-        //policy.ExpirationDate = DateOnly.FromDateTime(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.ExpirationDt.GetValueOrDefault());
-
         policy.Term = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.DurationPeriod.NumUnits;
 
         //ToDo: Review what is the best way to test for null? ?. statement? 
