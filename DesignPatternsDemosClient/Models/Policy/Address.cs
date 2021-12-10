@@ -1,5 +1,7 @@
 ﻿namespace DesignPatternsDemosClient.Models.Policy;
 
+//$$$RAC: Review each class and property.
+//Nullable?  
 public class Address
 {
     public string Line1 { get; set; }

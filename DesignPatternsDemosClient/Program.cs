@@ -17,7 +17,9 @@ var policyConverterRules = new List<IPolicyConverterRule>
             {
                 new PolicyRootConverter(), 
                 new InsuredConverter(), 
-                new AgencyConverter()
+                new AgencyConverter(),
+                new GeneralLiabilityLimitsConverter(),
+                new GeneralLiabilityDeductiblesConverter()
             };
 builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(policyConverterRules));
 

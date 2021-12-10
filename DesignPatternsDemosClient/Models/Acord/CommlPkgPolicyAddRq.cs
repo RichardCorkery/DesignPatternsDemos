@@ -27,6 +27,6 @@ public class CommlPkgPolicyAddRq
     [XmlElement("CommlSubLocation")]
     public List<CommlSubLocation> CommlSubLocations { get; set; }
 
-
-
+    [XmlElement("GeneralLiabilityLineBusiness")]
+    public GeneralLiabilityLineBusiness GeneralLiabilityLineBusiness { get; set; }
 }

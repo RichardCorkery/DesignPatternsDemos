@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
+<!--$$$RAC: Review and Remove -->
 <ACORD xmlns:q1='http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/'>
 	<SignonRq>
 		<ClientApp>
@@ -43,7 +44,6 @@
 							<SystemId>9752258</SystemId>
 						</ItemIdInfo>
 					</Addr>
-
 					<Communication>
 						<CommunicationUseCd>Home</CommunicationUseCd>
 						<PhoneNumber>2155551111</PhoneNumber>
@@ -53,7 +53,6 @@
 						<CommunicationUseCd>Business</CommunicationUseCd>
 						<PhoneNumber>6095552222</PhoneNumber>
 					</Communication>
-
 				</GeneralPartyInfo>
 				<InsuredOrPrincipalInfo>
 					<InsuredOrPrincipalRoleCd>Insured</InsuredOrPrincipalRoleCd>
@@ -150,6 +149,71 @@
 					<SprinkleredPct>0</SprinkleredPct>
 				</BldgProtection>
 			</CommlSubLocation>
+			<GeneralLiabilityLineBusiness>
+				<Deductible>
+					<DeductibleAppliesToCd>BodInj</DeductibleAppliesToCd>
+					<FormatInteger>1000</FormatInteger>
+					<DeductibleTypeCd>CL</DeductibleTypeCd>
+				</Deductible>
+				<Deductible>
+					<DeductibleAppliesToCd>PropDam</DeductibleAppliesToCd>
+					<FormatInteger>500</FormatInteger>
+					<DeductibleTypeCd>CL</DeductibleTypeCd>
+				</Deductible>
+				<LiabilityInfo>
+					<CommlCoverage>
+						<CoverageCd>EAOCC</CoverageCd>
+						<Limit>
+							<FormatCurrencyAmt>
+								<Amt>50000</Amt>
+							</FormatCurrencyAmt>
+							<LimitAppliesToCd>PerOcc</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+					<CommlCoverage>
+						<CoverageCd>GENAG</CoverageCd>
+						<Limit>
+							<FormatCurrencyAmt>
+								<Amt>100000</Amt>
+							</FormatCurrencyAmt>
+							<LimitAppliesToCd>Aggregate</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+					<CommlCoverage>
+						<CoverageCd>PRDCO</CoverageCd>
+						<Limit>
+							<FormatCurrencyAmt>
+								<Amt>50000</Amt>
+							</FormatCurrencyAmt>
+							<LimitAppliesToCd>PerOcc</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+					<CommlCoverage>
+						<CoverageCd>FIRDM</CoverageCd>
+						<Limit>
+							<FormatCurrencyAmt>
+								<Amt>100000</Amt>
+							</FormatCurrencyAmt>
+							<LimitAppliesToCd>PerOcc</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+					<CommlCoverage>
+						<CoverageCd>MEDEX</CoverageCd>
+						<Limit>
+							<FormatCurrencyAmt>
+								<Amt>5000</Amt>
+							</FormatCurrencyAmt>
+							<LimitAppliesToCd>PerOcc</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+					<CommlCoverage>
+						<CoverageCd>PIADV</CoverageCd>
+						<Limit>
+							<LimitAppliesToCd>Incl</LimitAppliesToCd>
+						</Limit>
+					</CommlCoverage>
+				</LiabilityInfo>
+			</GeneralLiabilityLineBusiness>
 			<CommlPropertyLineBusiness>
 				<LOBCd>PROPC</LOBCd>
 				<NAICCd>12345</NAICCd>
