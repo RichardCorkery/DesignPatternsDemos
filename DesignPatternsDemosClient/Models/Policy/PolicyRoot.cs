@@ -31,15 +31,12 @@ public class PolicyRoot
     [JsonProperty("BroadLOBCd")]
     public string BroadLobCd { get; set; }
 
-    //ToDo: Review agency code
-    public string AgencyCode { get; set; }
-
     public string SystemSource { get; set; }
 
     public decimal Premium { get; set; }
 
-    public Insured? Insured { get; set; }        
-             
+    public Insured? Insured { get; set; }
+
     public Agency? Agency { get; set; }
     public GeneralLiability? GeneralLiability { get; set; }
 }

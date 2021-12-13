@@ -4,8 +4,8 @@
 public class GeneralLiabilityLineBusiness
 {
     [XmlElement("Deductible")]
-    public List<Deductible> Deductibles { get; set; }
+    public List<Deductible>? Deductibles { get; set; }
 
     [XmlElement("LiabilityInfo")]
-    public LiabilityInfo LiabilityInfo { get; set; }
+    public LiabilityInfo? LiabilityInfo { get; set; }
 }

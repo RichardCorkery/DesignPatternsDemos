@@ -10,9 +10,6 @@ public class PolicyRootConverter : IPolicyConverterRule
         policy.RequestId = insuranceSvcRq.RqUId;
 
         policy.PolicyNumber = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyNumber;
-            
-        //ToDo: Does ACORD have a Description?
-        //policy.Description = insuranceSvcRq.
 
         policy.EffectiveDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.EffectiveDt.GetValueOrDefault();
         policy.ExpirationDate = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.ExpirationDt.GetValueOrDefault();
@@ -30,8 +27,7 @@ public class PolicyRootConverter : IPolicyConverterRule
         
         policy.LobCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd;
         policy.NaicCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd;
-
-
+        
         policy.Premium = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.CurrentTermAmt.Amt.GetValueOrDefault();
             
         //Demo Note:

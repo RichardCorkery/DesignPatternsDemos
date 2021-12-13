@@ -40,9 +40,6 @@
 						<StateProvCd>PA</StateProvCd>
 						<PostalCode>19111</PostalCode>
 						<County>Philadelphia</County>
-						<ItemIdInfo>
-							<SystemId>9752258</SystemId>
-						</ItemIdInfo>
 					</Addr>
 					<Communication>
 						<CommunicationUseCd>Home</CommunicationUseCd>
@@ -63,26 +60,22 @@
 			</InsuredOrPrincipal>
 			<Producer>
 				<ItemIdInfo>
-					<InsurerId>091750</InsurerId>
-					<SystemId>1115700</SystemId>
-					<AgencyId>12345</AgencyId>
+					<InsurerId>1111111111</InsurerId>
+					<SystemId>2222222222</SystemId>
+					<AgencyId>3333333333</AgencyId>
 				</ItemIdInfo>
 				<GeneralPartyInfo>
 					<NameInfo>
 						<CommlName>
-							<CommercialName>BREVARD INSURANCE  MARKETING INC</CommercialName>
+							<CommercialName>Acme Insurance</CommercialName>
 						</CommlName>
 					</NameInfo>
 					<Addr>
 						<AddrTypeCd>MailingAddress</AddrTypeCd>
-						<Addr1>PO BOX 320770</Addr1>
-						<City>COCOA BEACH</City>
-						<StateProvCd>FL</StateProvCd>
-						<PostalCode>32932</PostalCode>
-						<County>BREVARD</County>
-						<ItemIdInfo>
-							<SystemId>9752273</SystemId>
-						</ItemIdInfo>
+						<Addr1>1122 Front Street</Addr1>
+						<City>Philadelphia</City>
+						<StateProvCd>PA</StateProvCd>
+						<PostalCode>19111</PostalCode>
 					</Addr>
 				</GeneralPartyInfo>
 				<ProducerInfo>

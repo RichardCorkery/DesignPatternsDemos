@@ -8,5 +8,7 @@ public class Producer
 
     [XmlElement("GeneralPartyInfo")]
     public GeneralPartyInfo GeneralPartyInfo { get; set; }
-        
+
+    [XmlElement("ProducerInfo")]
+    public ProducerInfo ProducerInfo { get; set; }
 }

@@ -6,7 +6,6 @@ public class InsuredConverter : IPolicyConverterRule
     {
         var generalPartyInfo = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo;
         
-        //ToDo: Review how can this be not null?
         if(generalPartyInfo is null) return policy;
 
         var insured = new Insured();
