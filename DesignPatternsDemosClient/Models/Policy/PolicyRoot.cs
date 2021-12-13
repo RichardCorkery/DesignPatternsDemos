@@ -37,5 +37,5 @@ public class PolicyRoot
     public Insured Insured { get; set; }        
              
     public Agency Agency { get; set; }
-    public GeneralLiability GeneralLiability { get; set; }
+    public GeneralLiability? GeneralLiability { get; set; }
 }

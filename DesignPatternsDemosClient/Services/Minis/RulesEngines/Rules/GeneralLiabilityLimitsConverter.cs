@@ -4,6 +4,8 @@
 public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
 { public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
+        if (policy.GeneralLiability == null) return policy;
+
         var generalLiabilityLimit = new GeneralLiabilityLimit();
 
         var liabilityInfo = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.LiabilityInfo;
@@ -16,8 +18,6 @@ public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
         generalLiabilityLimit.MedicalExpenseLimit = liabilityInfo.GetLimitValue(CoverageCode.MedicalExpenseLimit);
         generalLiabilityLimit.PersonalAndAdvertisingInjuryLiabilityLimit = liabilityInfo.GetLimitValue(CoverageCode.PersonalAndAdvertisingInjuryLiability);
         
-        policy.GeneralLiability ??= new GeneralLiability();
-
         policy.GeneralLiability.GeneralLiabilityLimit = generalLiabilityLimit;
 
         return policy;

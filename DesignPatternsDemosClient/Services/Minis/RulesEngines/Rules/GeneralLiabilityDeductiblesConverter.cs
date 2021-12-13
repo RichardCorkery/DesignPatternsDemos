@@ -4,6 +4,8 @@ public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
     //ToDo: Unit Tests
     public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
+        if (policy.GeneralLiability == null) return policy;
+
         var generalLiabilityDeductible = new GeneralLiabilityDeductible();
 
         var propertyDamageDeductible = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.PropertyDamage);
@@ -19,8 +21,6 @@ public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
             generalLiabilityDeductible.BodilyInjuryeDeductibleType = bodilyInjuryDeductible.DeductibleTypeCd;
             generalLiabilityDeductible.BodilyInjuryeDeductible = bodilyInjuryDeductible.FormatInteger.GetValueOrDefault();
         }
-
-        policy.GeneralLiability ??= new GeneralLiability();
 
         policy.GeneralLiability.GeneralLiabilityDeductible = generalLiabilityDeductible;
 

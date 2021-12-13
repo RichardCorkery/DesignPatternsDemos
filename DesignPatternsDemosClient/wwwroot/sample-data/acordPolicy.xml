@@ -65,6 +65,7 @@
 				<ItemIdInfo>
 					<InsurerId>091750</InsurerId>
 					<SystemId>1115700</SystemId>
+					<AgencyId>12345</AgencyId>
 				</ItemIdInfo>
 				<GeneralPartyInfo>
 					<NameInfo>
