@@ -15,8 +15,7 @@ public class PolicyRootConverter : IPolicyConverterRule
 
         policy.Term = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.ContractTerm.DurationPeriod.NumUnits;
 
-        //ToDo: Review what is the best way to test for null? ?. statement? 
-        policy.PrimaryState = insuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo.NameInfo.TaxIdentity.StateProvCd;
+        policy.PrimaryState = insuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo?.NameInfo.TaxIdentity.StateProvCd;
         policy.TransactionId = insuranceSvcRq.CommlPkgPolicyAddRq.RqUId;
         policy.TransactionDate = insuranceSvcRq.CommlPkgPolicyAddRq.TransactionRequestDt;
         policy.BroadLobCd = insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd;
