@@ -5,3 +5,4 @@ Demos of some of my most commonly used Design Patterns
 - File-scoped Namespaces - C#10
 - Global Using Statement - C#10
 - ArgumentNullException.ThrowIfNull - C#10
+- Page Title Component - Blazor

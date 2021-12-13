@@ -4,8 +4,12 @@ using System.Text.Json;
 namespace DesignPatternsDemosClient.Pages;
 public partial class RulesEngineDemo
 {
+
     public string AcordPolicy { get; set; }
     public string MyPolicy { get; set; }
+
+    private string pageTitlePolicyNumber;
+
 
     protected override async Task OnInitializedAsync()
     {            
@@ -36,6 +40,9 @@ public partial class RulesEngineDemo
             JsonSerializerOptions options = new JsonSerializerOptions();
             options.WriteIndented = true; //Pretty print using indent, white space, new line, etc.
             MyPolicy = JsonSerializer.Serialize(policy, options);
+
+            pageTitlePolicyNumber = policy.PolicyNumber;
+
         }
         catch(Exception ex)
         {
