@@ -9,48 +9,50 @@ public class PolicyRootConverterTests
 
         var acord = new Acord
         {
-            SignonRq = new SignonRq()
+            SignonRq = new()
             {
-                ClientApp = new ClientApp()
+                ClientApp = new()
                 {
-                    Org = "InsuaSphere"
+                    Org = "InsuaSphere", 
+                    Name =  "Policy Importer", 
+                    Version = "1.1"
                 }
             },
-            InsuranceSvcRq = new InsuranceSvcRq
+            InsuranceSvcRq = new ()
             {
-                RqUId = new Guid(),
-                CommlPkgPolicyAddRq = new CommlPkgPolicyAddRq
+                RqUId = new (),
+                CommlPkgPolicyAddRq = new()
                 {
                     RqUId = new Guid(),
-                    TransactionRequestDt = new DateTime(2021, 7, 15),
+                    TransactionRequestDt = new (2021, 7, 15),
                     BroadLobCd = "P",
-                    CommlPolicy = new CommlPolicy 
+                    CommlPolicy = new() 
                     {   
                         PolicyNumber = "Policy Number",
                         PolicyStatusCd = "NBS",
                         LobCd = "CPKGE",
                         NaicCd = "12345", 
-                        ContractTerm = new ContractTerm() 
+                        ContractTerm = new() 
                         {
-                            EffectiveDt = new DateTime(2021, 7, 29),
-                            ExpirationDt = new DateTime(2022, 7, 29),
-                            DurationPeriod = new DurationPeriod() 
+                            EffectiveDt = new (2021, 7, 29),
+                            ExpirationDt = new (2022, 7, 29),
+                            DurationPeriod = new() 
                             {
                                 NumUnits = 12
                             }
                         },
-                        CurrentTermAmt = new CurrentTermAmt()
+                        CurrentTermAmt = new()
                         {
                             Amt = 10000
                         }
                     }, 
-                    InsuredOrPrincipal = new InsuredOrPrincipal()
+                    InsuredOrPrincipal = new()
                     {
-                        GeneralPartyInfo = new GeneralPartyInfo()
+                        GeneralPartyInfo = new()
                         {
-                            NameInfo = new NameInfo()
+                            NameInfo = new()
                             {
-                                TaxIdentity = new TaxIdentity()
+                                TaxIdentity = new()
                                 {
                                     StateProvCd = "PA"
                                 }
@@ -80,7 +82,7 @@ public class PolicyRootConverterTests
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd,policy.BroadLOBCd);
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyStatusCd, policy.PolicyStatusCd);
 
-        Assert.Equal(acord.SignonRq.ClientApp.Org, policy.SystemSource);
+        Assert.Equal("InsuaSphere-Policy Importer-1.1", policy.SystemSource);
 
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd, policy.LOBCd);
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd, policy.NAICCd);

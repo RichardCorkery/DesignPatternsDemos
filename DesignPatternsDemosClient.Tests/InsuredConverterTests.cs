@@ -8,22 +8,22 @@ public class InsuredConverterTests
 
         var acord = new Acord
         {
-            InsuranceSvcRq = new InsuranceSvcRq
+            InsuranceSvcRq = new()
             {                    
-                CommlPkgPolicyAddRq = new CommlPkgPolicyAddRq
+                CommlPkgPolicyAddRq = new()
                 {
-                    InsuredOrPrincipal = new InsuredOrPrincipal
+                    InsuredOrPrincipal = new()
                     {
-                        GeneralPartyInfo = new GeneralPartyInfo
+                        GeneralPartyInfo = new()
                         {
-                            NameInfo = new NameInfo
+                            NameInfo = new()
                             {
-                                CommlName = new CommlName
+                                CommlName = new()
                                 {
                                     CommercialName = "CommericalName"
                                 }
                             },
-                            Addr = new Addr
+                            Addr = new()
                             {
                                 Addr1 = "Addr1", 
                                 Addr2 = "Addr2", 
@@ -31,15 +31,15 @@ public class InsuredConverterTests
                                 PostalCode = "PostalCode", 
                                 County = "County"
                             }, 
-                            Communications = new List<Communication>()
+                            Communications = new()
                             {
-                                new Communication()
+                                new()
                                 {
                                     CommunicationUseCd = "Home", 
                                     PhoneNumber = "2155551212",
                                     EmailAddr = "emailaddress@home.com"
                                 },
-                                new Communication()
+                                new()
                                 {
                                     CommunicationUseCd = "Business",
                                     PhoneNumber = "6105553333"
