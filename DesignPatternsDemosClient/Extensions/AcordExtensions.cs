@@ -1,6 +1,5 @@
 ﻿namespace DesignPatternsDemosClient.Extensions;
 
-//ToDo: Review
 public static class AcordExtensions
 {
     public static decimal GetCoverageValue(this LiabilityInfo liabilityInfo, string coverageCode, string limitCode, decimal defaultValue)
@@ -15,7 +14,7 @@ public static class AcordExtensions
         return value ?? defaultValue;
     }
 
-    public static string GetLimitValue(this LiabilityInfo liabilityInfo, string coverageCode)
+    public static string? GetLimitValue(this LiabilityInfo liabilityInfo, string coverageCode)
     {
         var commlCoverage = liabilityInfo.CommlCoverage.FirstOrDefault(c => c.CoverageCd == coverageCode);
         if (commlCoverage == null) return null;
@@ -26,6 +25,6 @@ public static class AcordExtensions
         if (amt.HasValue) return amt.Value.ToString(CultureInfo.InvariantCulture);
 
         limit = commlCoverage.Limits.FirstOrDefault(l => !string.IsNullOrWhiteSpace(l.LimitAppliesToCd));
-        return limit is null ? null : limit.LimitAppliesToCd;
+        return limit?.LimitAppliesToCd;
     }
 }
