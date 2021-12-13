@@ -25,3 +25,10 @@ public class CommunicationUseCode
     public const string Home = "Home";
     public const string Business = "Business";
 }
+
+public class CssClass
+{
+    public const string AlertDanger = "alert-danger";
+    public const string AlertInfo = "alert-info";
+    public const string AlertPrimary = "alert-primary";
+}

@@ -6,19 +6,22 @@
 @inject HttpClient _httpClient;
 @inject IRulesEngineDemoOrchestrator _rulesEngineDemoOrchestrator;
 
-<PageTitle>Policy: @pageTitlePolicyNumber</PageTitle>
+<PageTitle>Policy: @PageTitlePolicyNumber</PageTitle>
 
 <h1>Rules Engine Demo</h1>
 
-@*To Do:
-    - Review id values
-    - function name
-    - Button Text*@
+@* ToDo: Make a Component *@
+@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert @AlertClass text-center">
+        <strong>@Message</strong>
+    </div>
+}
 
-<textarea id="AcordPolicy" rows="10" cols="150" @bind="@AcordPolicy"></textarea>
+<textarea id="acordPolicy" rows="15" cols="150" @bind="@Acord"></textarea>
 
-<textarea id="MyPolicy" rows="10" cols="150" @bind="@MyPolicy"></textarea>
+<textarea id="policy" rows="15" cols="150" @bind="@Policy"></textarea>
 
 <br>
 
-<button class="btn btn-primary" @onclick="Convert">Covert To Policy Model</button>
+<button class="btn btn-primary" @onclick="ConvertToPolicy">Covert To Policy</button>

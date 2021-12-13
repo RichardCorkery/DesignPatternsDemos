@@ -4,7 +4,7 @@ public class AgencyConverter : IPolicyConverterRule
 {
     public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
-        //ToDo: Create a Base Class and put these checks there
+        //ToDo: Create a Base Class and put these checks there (Decorator Design Pattern?)
         ArgumentNullException.ThrowIfNull(acord);
         ArgumentNullException.ThrowIfNull(policy);
 
