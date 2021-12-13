@@ -2,6 +2,11 @@
 
 public static class AcordExtensions
 {
+    public static bool HasGeneralLiability(this Acord acord)
+    {
+        return (acord.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness == null);
+    }
+
     public static decimal GetCoverageValue(this LiabilityInfo liabilityInfo, string coverageCode, string limitCode, decimal defaultValue)
     {
         var commlCoverage = liabilityInfo.CommlCoverage.FirstOrDefault(c => c.CoverageCd == coverageCode);

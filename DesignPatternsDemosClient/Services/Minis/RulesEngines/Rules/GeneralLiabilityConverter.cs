@@ -6,7 +6,8 @@ public class GeneralLiabilityConverter : IPolicyConverterRule
         ArgumentNullException.ThrowIfNull(acord);
         ArgumentNullException.ThrowIfNull(policy);
 
-        if (acord.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness == null) return policy;
+        //Note: Example of self documented code (Clean Code)
+        if (acord.HasGeneralLiability()) return policy;
         
         policy.GeneralLiability = new GeneralLiability();
 

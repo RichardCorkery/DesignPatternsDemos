@@ -6,3 +6,6 @@ Demos of some of my most commonly used Design Patterns
 - Global Using Statement - C#10
 - ArgumentNullException.ThrowIfNull - C#10
 - Page Title Component - Blazor
+
+## Highlights of other tech usage:
+- Self Documented Code (Clean Code)
