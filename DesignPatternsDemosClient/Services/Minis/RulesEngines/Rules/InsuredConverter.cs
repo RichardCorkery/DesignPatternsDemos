@@ -12,7 +12,6 @@ public class InsuredConverter : IPolicyConverterRule
 
         insured.FullName = generalPartyInfo.NameInfo.CommlName.CommercialName;
 
-        //ToDo: What if anything this null?
         var communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Home");
         if (communication != null)
         {

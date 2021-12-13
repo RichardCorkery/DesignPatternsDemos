@@ -4,7 +4,6 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
 public interface IPolicyConverterRulesEngine
 {
-    //ToDo: Method name ToPolicy or ToPolicyModel?
     public PolicyRoot ToPolicy(Acord inputPolicy);
 }
 

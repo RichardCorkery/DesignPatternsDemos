@@ -2,7 +2,6 @@
 
 public class PolicyRootConverter : IPolicyConverterRule
 {
-    //ToDo: Rename inputPolicy to acord
     public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
         var insuranceSvcRq = inputPolicy.InsuranceSvcRq;
