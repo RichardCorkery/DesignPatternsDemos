@@ -1,7 +1,4 @@
-﻿//ToDo: Blazor
-//  - Add Error Boundaries
-
-namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
 public interface IPolicyConverterRule
 {

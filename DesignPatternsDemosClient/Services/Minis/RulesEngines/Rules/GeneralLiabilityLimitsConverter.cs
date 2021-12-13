@@ -6,7 +6,8 @@ public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
         ArgumentNullException.ThrowIfNull(acord);
         ArgumentNullException.ThrowIfNull(policy);
 
-        if (policy.GeneralLiability == null) return policy;
+        //Note: Example of self documented code (Clean Code)
+        if (policy.HasGeneralLiability()) return policy;
 
         var generalLiabilityLimit = new GeneralLiabilityLimit();
 

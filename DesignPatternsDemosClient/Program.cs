@@ -18,6 +18,8 @@ var policyConverterRules = new List<IPolicyConverterRule>
                 new PolicyRootConverter(), 
                 new InsuredConverter(), 
                 new AgencyConverter(),
+                new LocationConverter(),
+                new BuildingConverter(),
                 new GeneralLiabilityConverter(),
                 new GeneralLiabilityLimitsConverter(),
                 new GeneralLiabilityDeductiblesConverter()
