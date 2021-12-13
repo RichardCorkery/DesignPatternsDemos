@@ -1,10 +1,12 @@
-﻿namespace DesignPatternsDemosClient.Models.Policy;
+﻿using Newtonsoft.Json;
+
+namespace DesignPatternsDemosClient.Models.Policy;
 
 public class PolicyRoot
 {
     public Guid RequestId { get; set; }
         
-    public string PolicyNumber { get; set; }
+    public string? PolicyNumber { get; set; }
 
     public DateTime EffectiveDate { get; set; }
 
@@ -12,30 +14,32 @@ public class PolicyRoot
     
     public int Term { get; set; }
 
-    public string PrimaryState { get; set; }
+    public string? PrimaryState { get; set; }
 
     public Guid TransactionId { get; set; }
 
     public DateTime TransactionDate { get; set; }
 
-    public string PolicyStatusCd { get; set; }
+    public string? PolicyStatusCd { get; set; }
 
-    //Add attribute
-    public string LOBCd { get; set; }
+    [JsonProperty("LOBCd")]
+    public string LobCd { get; set; }
 
-    //Add attribute
-    public string NAICCd { get; set; }
+    [JsonProperty("NAICCd")]
+    public string NaicCd { get; set; }
 
-    public string BroadLOBCd { get; set; }
+    [JsonProperty("BroadLOBCd")]
+    public string BroadLobCd { get; set; }
 
+    //ToDo: Review agency code
     public string AgencyCode { get; set; }
 
     public string SystemSource { get; set; }
 
     public decimal Premium { get; set; }
 
-    public Insured Insured { get; set; }        
+    public Insured? Insured { get; set; }        
              
-    public Agency Agency { get; set; }
+    public Agency? Agency { get; set; }
     public GeneralLiability? GeneralLiability { get; set; }
 }

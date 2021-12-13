@@ -1,7 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Models.Acord;
 
 [XmlRoot("Construction")]
-
 public class Construction
 {
     [XmlElement("ConstructionCd")]

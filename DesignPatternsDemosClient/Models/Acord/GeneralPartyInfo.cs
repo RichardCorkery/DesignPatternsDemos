@@ -7,7 +7,6 @@ public class GeneralPartyInfo
     public NameInfo NameInfo { get; set; }
 
     [XmlElement("Addr")]
-    //ToDo: Make everything nullable
     public Addr Addr { get; set; }
 
     [XmlElement("Communication")]

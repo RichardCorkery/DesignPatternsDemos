@@ -79,13 +79,13 @@ public class PolicyRootConverterTests
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo.NameInfo.TaxIdentity.StateProvCd,policy.PrimaryState );
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.RqUId,policy.TransactionId);
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.TransactionRequestDt,policy.TransactionDate);
-        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd,policy.BroadLOBCd);
+        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd,policy.BroadLobCd);
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyStatusCd, policy.PolicyStatusCd);
 
         Assert.Equal("InsuaSphere-Policy Importer-1.1", policy.SystemSource);
 
-        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd, policy.LOBCd);
-        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd, policy.NAICCd);
+        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd, policy.LobCd);
+        Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd, policy.NaicCd);
 
         Assert.Equal(insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.CurrentTermAmt.Amt, result.Premium);
     }

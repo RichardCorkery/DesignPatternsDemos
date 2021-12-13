@@ -8,6 +8,4 @@ public class InsuranceSvcRq
 
     [XmlElement("CommlPkgPolicyAddRq")]
     public CommlPkgPolicyAddRq CommlPkgPolicyAddRq { get; set; }
-
-
 }

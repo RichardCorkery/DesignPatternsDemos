@@ -8,8 +8,7 @@ public class Deductible
 
     [XmlElement("DeductibleTypeCd")]
     public string DeductibleTypeCd { get; set; }
-
-    //ToDo: Nullable?
+    
     [XmlElement("FormatInteger")]
     public int? FormatInteger { get; set; }
 }

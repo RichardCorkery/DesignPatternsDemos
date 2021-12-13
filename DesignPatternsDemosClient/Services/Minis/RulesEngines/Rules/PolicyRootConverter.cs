@@ -23,13 +23,13 @@ public class PolicyRootConverter : IPolicyConverterRule
         policy.PrimaryState = insuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo.NameInfo.TaxIdentity.StateProvCd;
         policy.TransactionId = insuranceSvcRq.CommlPkgPolicyAddRq.RqUId;
         policy.TransactionDate = insuranceSvcRq.CommlPkgPolicyAddRq.TransactionRequestDt;
-        policy.BroadLOBCd = insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd;
+        policy.BroadLobCd = insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd;
         policy.PolicyStatusCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyStatusCd;
 
         policy.SystemSource = $"{inputPolicy.SignonRq.ClientApp.Org}-{inputPolicy.SignonRq.ClientApp.Name}-{inputPolicy.SignonRq.ClientApp.Version}";
         
-        policy.LOBCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd;
-        policy.NAICCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd;
+        policy.LobCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd;
+        policy.NaicCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd;
 
 
         policy.Premium = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.CurrentTermAmt.Amt.GetValueOrDefault();
