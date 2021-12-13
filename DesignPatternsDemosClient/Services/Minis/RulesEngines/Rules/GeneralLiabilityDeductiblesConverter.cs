@@ -2,22 +2,23 @@
 
 public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
 {
-    //ToDo: Unit Tests
-    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+    public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
+        ArgumentNullException.ThrowIfNull(acord);
+        ArgumentNullException.ThrowIfNull(policy);
+
         if (policy.GeneralLiability == null) return policy;
 
         var generalLiabilityDeductible = new GeneralLiabilityDeductible();
-
-        //ToDo: Fix all warning messages
-        var propertyDamageDeductible = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.PropertyDamage);
+        
+        var propertyDamageDeductible = acord.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.PropertyDamage);
         if (propertyDamageDeductible is not null)
         {
             generalLiabilityDeductible.PropertyDamageDeductibleType = propertyDamageDeductible.DeductibleTypeCd;
             generalLiabilityDeductible.PropertyDamageDeductible = propertyDamageDeductible.FormatInteger.GetValueOrDefault();
         }
 
-        var bodilyInjuryDeductible = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.BodilyInjury);
+        var bodilyInjuryDeductible = acord.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.BodilyInjury);
         if (bodilyInjuryDeductible is not null)
         {
             generalLiabilityDeductible.BodilyInjuryeDeductibleType = bodilyInjuryDeductible.DeductibleTypeCd;

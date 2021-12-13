@@ -1,6 +1,7 @@
 # design-patterns-demos
 Demos of some of my most commonly used Design Patterns
 
-# H2 Highlights of "new" tech usage:
-- File-scoped Namespaces
-- Global Using Statement
+## Highlights of "new" tech usage:
+- File-scoped Namespaces - C#10
+- Global Using Statement - C#10
+- ArgumentNullException.ThrowIfNull - C#10

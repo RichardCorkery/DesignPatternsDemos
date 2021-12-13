@@ -1,14 +1,16 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
-//ToDo: Unit Tests
 public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
-{ public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+{ public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
+        ArgumentNullException.ThrowIfNull(acord);
+        ArgumentNullException.ThrowIfNull(policy);
+
         if (policy.GeneralLiability == null) return policy;
 
         var generalLiabilityLimit = new GeneralLiabilityLimit();
 
-        var liabilityInfo = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.LiabilityInfo;
+        var liabilityInfo = acord.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness?.LiabilityInfo;
         
         generalLiabilityLimit.OccurrenceLimit = liabilityInfo.GetCoverageValue(CoverageCode.OccurrenceLimit, LimitAppliesCode.PerOccurrence, 0);
         generalLiabilityLimit.GeneralAggregateLimit = liabilityInfo.GetCoverageValue(CoverageCode.GeneralAggregate, LimitAppliesCode.Aggregate, 0);

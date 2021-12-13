@@ -17,6 +17,8 @@ public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
     }
     public PolicyRoot Process(string inputPolicy)
     {
+        ArgumentNullException.ThrowIfNull(inputPolicy);
+
         var xml = inputPolicy;
 
         Acord acord = null;

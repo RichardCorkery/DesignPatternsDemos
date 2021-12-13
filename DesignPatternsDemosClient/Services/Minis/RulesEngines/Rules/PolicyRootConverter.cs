@@ -2,9 +2,12 @@
 
 public class PolicyRootConverter : IPolicyConverterRule
 {
-    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+    public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
-        var insuranceSvcRq = inputPolicy.InsuranceSvcRq;
+        ArgumentNullException.ThrowIfNull(acord);
+        ArgumentNullException.ThrowIfNull(policy);
+
+        var insuranceSvcRq = acord.InsuranceSvcRq;
 
         policy.RequestId = insuranceSvcRq.RqUId;
 
@@ -21,7 +24,7 @@ public class PolicyRootConverter : IPolicyConverterRule
         policy.BroadLobCd = insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd;
         policy.PolicyStatusCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyStatusCd;
 
-        policy.SystemSource = $"{inputPolicy.SignonRq.ClientApp.Org}-{inputPolicy.SignonRq.ClientApp.Name}-{inputPolicy.SignonRq.ClientApp.Version}";
+        policy.SystemSource = $"{acord.SignonRq.ClientApp.Org}-{acord.SignonRq.ClientApp.Name}-{acord.SignonRq.ClientApp.Version}";
         
         policy.LobCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd;
         policy.NaicCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd;

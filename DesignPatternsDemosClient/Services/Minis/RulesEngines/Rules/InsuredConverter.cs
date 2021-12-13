@@ -2,9 +2,12 @@
 
 public class InsuredConverter : IPolicyConverterRule
 {
-    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+    public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
-        var generalPartyInfo = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo;
+        ArgumentNullException.ThrowIfNull(acord);
+        ArgumentNullException.ThrowIfNull(policy);
+
+        var generalPartyInfo = acord.InsuranceSvcRq.CommlPkgPolicyAddRq.InsuredOrPrincipal.GeneralPartyInfo;
         
         if(generalPartyInfo is null) return policy;
 

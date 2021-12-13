@@ -4,7 +4,7 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
 public interface IPolicyConverterRulesEngine
 {
-    public PolicyRoot ToPolicy(Acord inputPolicy);
+    public PolicyRoot ToPolicy(Acord acord);
 }
 public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
 {
@@ -15,13 +15,15 @@ public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
         _rules.AddRange(rules);
     }
 
-    public PolicyRoot ToPolicy(Acord inputPolicy)
+    public PolicyRoot ToPolicy(Acord acord)
     {
+        ArgumentNullException.ThrowIfNull(acord);
+        
         var policy = new PolicyRoot();
 
         foreach (var rule in _rules)
         {
-            policy = rule.Convert(inputPolicy, policy);
+            policy = rule.Convert(acord, policy);
         }
 
         return policy;

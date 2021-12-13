@@ -2,12 +2,16 @@
 
 public class AgencyConverter : IPolicyConverterRule
 {
-    public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
+    public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
+        //ToDo: Create a Base Class and put these checks there
+        ArgumentNullException.ThrowIfNull(acord);
+        ArgumentNullException.ThrowIfNull(policy);
+
         var agency = new Agency();
 
         //Note: There are many more fields that could be mapped for Agency including: Id, Address, Company Information and etc
-        agency.Name = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.Producer.GeneralPartyInfo.NameInfo.CommlName.CommercialName;
+        agency.Name = acord.InsuranceSvcRq.CommlPkgPolicyAddRq.Producer.GeneralPartyInfo.NameInfo.CommlName.CommercialName;
 
         policy.Agency = agency;
 
