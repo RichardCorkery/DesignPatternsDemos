@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
-public class InsuredConverter : IPolicyConverterRule
+public class InsuredConverterRule : IPolicyConverterRule
 {
     public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {

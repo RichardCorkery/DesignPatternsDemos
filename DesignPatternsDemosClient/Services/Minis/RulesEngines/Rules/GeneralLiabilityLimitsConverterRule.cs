@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
-public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
+public class GeneralLiabilityLimitsConverterRule : IPolicyConverterRule
 { public PolicyRoot Convert(Acord acord, PolicyRoot policy)
     {
         ArgumentNullException.ThrowIfNull(acord);

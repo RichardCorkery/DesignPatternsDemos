@@ -15,14 +15,14 @@ builder.Services.AddTransient<IRulesEngineDemoOrchestrator, RulesEngineDemoOrche
 
 var policyConverterRules = new List<IPolicyConverterRule>
             {
-                new PolicyRootConverter(), 
-                new InsuredConverter(), 
-                new AgencyConverter(),
+                new PolicyRootConverterRule(), 
+                new InsuredConverterRule(), 
+                new AgencyConverterRule(),
                 new LocationConverter(),
-                new BuildingConverter(),
-                new GeneralLiabilityConverter(),
-                new GeneralLiabilityLimitsConverter(),
-                new GeneralLiabilityDeductiblesConverter()
+                new BuildingConverterRule(),
+                new GeneralLiabilityConverterRule(),
+                new GeneralLiabilityLimitsConverterRule(),
+                new GeneralLiabilityDeductiblesConverterRule()
             };
 builder.Services.AddTransient<IPolicyConverterRulesEngine>(sp => new PolicyConverterRulesEngine(policyConverterRules));
 

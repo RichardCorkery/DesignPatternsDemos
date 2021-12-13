@@ -5,7 +5,7 @@ public class PolicyRootConverterTests
     [Fact]
     public void Convert_GivenAnAcordPolicy_AllPolicyRootValuesArePopulatedCorrectly()
     {
-        var sut = new PolicyRootConverter();
+        var sut = new PolicyRootConverterRule();
 
         var acord = new Acord
         {

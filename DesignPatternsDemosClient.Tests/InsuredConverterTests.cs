@@ -4,7 +4,7 @@ public class InsuredConverterTests
     [Fact]
     public void Convert_GivenAnAcordPolicy_AllPolicyInsuredValuesArePopulatedCorrectly()
     {
-        var sut = new InsuredConverter();
+        var sut = new InsuredConverterRule();
 
         var acord = new Acord
         {
