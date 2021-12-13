@@ -2,7 +2,6 @@
 
 public class PolicyRoot
 {
-        
     public Guid RequestId { get; set; }
         
     public string PolicyNumber { get; set; }
@@ -39,5 +38,4 @@ public class PolicyRoot
              
     public Agency Agency { get; set; }
     public GeneralLiability GeneralLiability { get; set; }
-
 }

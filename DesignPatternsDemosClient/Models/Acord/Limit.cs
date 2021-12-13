@@ -8,6 +8,4 @@ public class Limit
 
     [XmlElement("FormatCurrencyAmt")]
     public FormatCurrencyAmt FormatCurrencyAmt { get; set; }
-
-
 }

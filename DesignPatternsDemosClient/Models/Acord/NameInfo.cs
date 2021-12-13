@@ -8,5 +8,4 @@ public class NameInfo
 
     [XmlElement("TaxIdentity")]
     public TaxIdentity TaxIdentity { get; set; }
-
 }

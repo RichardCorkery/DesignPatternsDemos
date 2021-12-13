@@ -26,9 +26,8 @@ public class PolicyRootConverter : IPolicyConverterRule
         policy.BroadLOBCd = insuranceSvcRq.CommlPkgPolicyAddRq.BroadLobCd;
         policy.PolicyStatusCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.PolicyStatusCd;
 
-        policy.SystemSource = inputPolicy.SignonRq.ClientApp.Org; //+name + ver
-           
-
+        policy.SystemSource = $"{inputPolicy.SignonRq.ClientApp.Org}-{inputPolicy.SignonRq.ClientApp.Name}-{inputPolicy.SignonRq.ClientApp.Version}";
+        
         policy.LOBCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.LobCd;
         policy.NAICCd = insuranceSvcRq.CommlPkgPolicyAddRq.CommlPolicy.NaicCd;
 

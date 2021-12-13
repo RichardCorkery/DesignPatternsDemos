@@ -1,7 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Models.Policy;
 
-//ToDo: Review each class and property.
-//Nullable?  
+//ToDo: Nullable?  
 public class Address
 {
     public string Line1 { get; set; }
