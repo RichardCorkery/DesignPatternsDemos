@@ -1,4 +1,5 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
+
 public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
 {
     //ToDo: Unit Tests
@@ -8,6 +9,7 @@ public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
 
         var generalLiabilityDeductible = new GeneralLiabilityDeductible();
 
+        //ToDo: Fix all warning messages
         var propertyDamageDeductible = inputPolicy.InsuranceSvcRq.CommlPkgPolicyAddRq.GeneralLiabilityLineBusiness.Deductibles.FirstOrDefault(d => d.DeductibleAppliesToCd == DeductibleAppliesCode.PropertyDamage);
         if (propertyDamageDeductible is not null)
         {

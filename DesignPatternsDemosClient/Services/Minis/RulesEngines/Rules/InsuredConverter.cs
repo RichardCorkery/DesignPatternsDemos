@@ -12,14 +12,14 @@ public class InsuredConverter : IPolicyConverterRule
 
         insured.FullName = generalPartyInfo.NameInfo.CommlName.CommercialName;
 
-        var communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Home");
+        var communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == CommunicationUseCode.Home);
         if (communication != null)
         {
             insured.PhoneHome = communication.PhoneNumber;
             insured.EmailAddress = communication.EmailAddr;
         }
 
-        communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == "Business");
+        communication = generalPartyInfo.Communications.FirstOrDefault(c => c.CommunicationUseCd == CommunicationUseCode.Business);
         if (communication != null)
         {
             insured.PhoneWork = communication.PhoneNumber;

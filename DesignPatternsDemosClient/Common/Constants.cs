@@ -1,6 +1,4 @@
 ﻿namespace DesignPatternsDemosClient.Common;
-
-//ToDo: Any other constants?
 public class DeductibleAppliesCode
 {
     public const string BodilyInjury = "BodInj";
@@ -20,4 +18,10 @@ public class LimitAppliesCode
 {
     public const string Aggregate = "Aggregate";
     public const string PerOccurrence = "PerOcc";
+}
+
+public class CommunicationUseCode
+{
+    public const string Home = "Home";
+    public const string Business = "Business";
 }

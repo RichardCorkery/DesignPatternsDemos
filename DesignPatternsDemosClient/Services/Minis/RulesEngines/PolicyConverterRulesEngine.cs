@@ -6,7 +6,6 @@ public interface IPolicyConverterRulesEngine
 {
     public PolicyRoot ToPolicy(Acord inputPolicy);
 }
-
 public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
 {
     readonly List<IPolicyConverterRule> _rules = new();

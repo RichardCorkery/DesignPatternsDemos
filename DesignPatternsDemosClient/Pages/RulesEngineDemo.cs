@@ -12,7 +12,7 @@ public partial class RulesEngineDemo
         try
         {
 
-            var acordXml = await Http.GetStringAsync("sample-data/acordPolicy.xml");
+            var acordXml = await _httpClient.GetStringAsync("sample-data/acordPolicy.xml");
 
             var acordXdoc = XDocument.Parse(acordXml);
 
@@ -20,22 +20,11 @@ public partial class RulesEngineDemo
         }
         catch (Exception ex)
         {
+            //ToDo Add basic logging
             var x = ex.Message;
         }
 
     }
-
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
-
 
     private void Convert()
     {
