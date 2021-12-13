@@ -7,7 +7,7 @@ public class GeneralPartyInfo
     public NameInfo NameInfo { get; set; }
 
     [XmlElement("Addr")]
-    //$$$RAC: Make everything nullable
+    //ToDo: Make everything nullable
     public Addr Addr { get; set; }
 
     [XmlElement("Communication")]

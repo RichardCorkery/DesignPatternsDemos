@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 
-//$$$RAC: Unit Tests
+//ToDo: Unit Tests
 public class GeneralLiabilityLimitsConverter : IPolicyConverterRule
 { public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {

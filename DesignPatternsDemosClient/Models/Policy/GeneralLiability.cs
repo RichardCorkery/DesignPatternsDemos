@@ -1,7 +1,7 @@
 ﻿namespace DesignPatternsDemosClient.Models.Policy;
 public class GeneralLiabilityLimit
-{ 
-    //$$$RAC: nullable?
+{
+    //ToDo: nullable?
     public decimal OccurrenceLimit { get; set; }
     public decimal GeneralAggregateLimit { get; set; }
     public decimal ProductsAndCompletedOperationsLimit { get; set; }

@@ -2,8 +2,8 @@
 
 public class Agency
 {
-    //$$$RAC: Review the new acord json for agency
-    //$$$RAC" Better name?
+    //ToDo: Review the new acord json for agency
+    //ToDo: Better name?
     public string Id { get; set; }
 
 }

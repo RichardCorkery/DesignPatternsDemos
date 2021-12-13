@@ -1,7 +1,7 @@
 ﻿namespace DesignPatternsDemosClient.Services.Minis.RulesEngines.Rules;
 public class GeneralLiabilityDeductiblesConverter : IPolicyConverterRule
 {
-    //$$$RAC: Unit Tests
+    //ToDo: Unit Tests
     public PolicyRoot Convert(Acord inputPolicy, PolicyRoot policy)
     {
         var generalLiabilityDeductible = new GeneralLiabilityDeductible();

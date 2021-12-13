@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Models.Acord;
 
-//$$$RAC: Review each class and property. Delete what every you think you should
+//ToDo: Review each class and property. Delete what every you think you should
 [XmlRoot("ACORD")]
 public class Acord
 {

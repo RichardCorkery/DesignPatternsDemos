@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Extensions;
 
-//$$$RAC: Review
+//ToDo: Review
 public static class AcordExtensions
 {
     public static decimal GetCoverageValue(this LiabilityInfo liabilityInfo, string coverageCode, string limitCode, decimal defaultValue)

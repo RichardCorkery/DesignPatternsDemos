@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Common;
 
-//$$$RAC: Any other constants?
+//ToDo: Any other constants?
 public class DeductibleAppliesCode
 {
     public const string BodilyInjury = "BodInj";

@@ -1,6 +1,6 @@
 ﻿namespace DesignPatternsDemosClient.Models.Policy;
 
-//$$$RAC: Review each class and property.
+//ToDo: Review each class and property.
 //Nullable?  
 public class Address
 {
