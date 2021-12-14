@@ -1,9 +1,17 @@
 ﻿using System.Xml.Linq;
 using System.Text.Json;
+using DesignPatternsDemosClient.Services.Orchestrators;
+using Microsoft.AspNetCore.Components;
 
 namespace DesignPatternsDemosClient.Pages;
 public partial class RulesEngineDemo
 {
+    [Inject]
+    public HttpClient HttpClient{ get; set; }
+
+    [Inject]
+    public IPolicyConverterRulesOrchestrator PolicyConverterRulesOrchestrator { get; set; }
+
     public string Acord { get; set; } = string.Empty;
     public string Policy { get; set; } = string.Empty;
 
@@ -16,7 +24,7 @@ public partial class RulesEngineDemo
     {            
         try
         {
-            var acordXml = await _httpClient.GetStringAsync("sample-data/acordPolicy.xml");
+            var acordXml = await HttpClient.GetStringAsync("sample-data/acordPolicy.xml");
 
             var acordXdoc = XDocument.Parse(acordXml);
 
@@ -36,7 +44,7 @@ public partial class RulesEngineDemo
 
         try
         {
-            var policy = _rulesEngineDemoOrchestrator.Process(Acord);
+            var policy = PolicyConverterRulesOrchestrator.Convert(Acord);
 
             var options = new JsonSerializerOptions
             {

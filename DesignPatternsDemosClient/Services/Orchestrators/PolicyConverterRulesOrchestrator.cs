@@ -1,21 +1,19 @@
 ﻿using DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
-//ToDo: Review
 namespace DesignPatternsDemosClient.Services.Orchestrators;
-public interface IRulesEngineDemoOrchestrator
+public interface IPolicyConverterRulesOrchestrator
 {
-    //ToDo: Better method name
-    public PolicyRoot Process(string inputPolicy);
+    public PolicyRoot Convert(string inputPolicy);
 }
-public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
+public class PolicyConverterRulesOrchestrator: IPolicyConverterRulesOrchestrator
 {
-    private IPolicyConverterRulesEngine _acordConverterRulesEngine;
+    private IPolicyConverterRulesEngine _policyConverterRulesEngine;
 
-    public RulesEngineDemoOrchestrator(IPolicyConverterRulesEngine acordConverterRulesEngine)
+    public PolicyConverterRulesOrchestrator(IPolicyConverterRulesEngine policyConverterRulesEngine)
     {
-        _acordConverterRulesEngine = acordConverterRulesEngine;
+        _policyConverterRulesEngine = policyConverterRulesEngine;
     }
-    public PolicyRoot Process(string inputPolicy)
+    public PolicyRoot Convert(string inputPolicy)
     {
         ArgumentNullException.ThrowIfNull(inputPolicy);
 
@@ -47,6 +45,6 @@ public class RulesEngineDemoOrchestrator: IRulesEngineDemoOrchestrator
             var x = ex.Message;
         }
 
-        return _acordConverterRulesEngine.ToPolicy(acord);
+        return _policyConverterRulesEngine.ToPolicy(acord);
     }
 }
