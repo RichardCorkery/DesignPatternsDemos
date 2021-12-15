@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<!--$$$RAC: Review and Remove -->
 <ACORD xmlns:q1='http://www.ACORD.org/standards/PC_Surety/ACORD1/xml/'>
 	<SignonRq>
 		<ClientApp>
@@ -21,7 +20,7 @@
 			<BroadLOBCd>P</BroadLOBCd>
 			<InsuredOrPrincipal>
 				<ItemIdInfo>
-					<SystemId> 571034 </SystemId>
+					<SystemId>571034</SystemId>
 				</ItemIdInfo>
 				<GeneralPartyInfo>
 					<NameInfo>
@@ -54,7 +53,7 @@
 				<InsuredOrPrincipalInfo>
 					<InsuredOrPrincipalRoleCd>Insured</InsuredOrPrincipalRoleCd>
 					<BusinessInfo>
-						<OperationsDesc> BUILDING OWNER - LRO </OperationsDesc>
+						<OperationsDesc>BUILDING OWNER - LRO</OperationsDesc>
 					</BusinessInfo>
 				</InsuredOrPrincipalInfo>
 			</InsuredOrPrincipal>
@@ -94,10 +93,10 @@
 					</DurationPeriod>
 				</ContractTerm>
 				<CurrentTermAmt>
-					<Amt>22698</Amt>
+					<Amt>22777</Amt>
 				</CurrentTermAmt>
 				<MinPremAmt>
-					<Amt>1171.05</Amt>
+					<Amt>2171.05</Amt>
 				</MinPremAmt>
 				<PolicyStatusCd>NBS</PolicyStatusCd>
 				<CommlPolicySupplement />
@@ -217,16 +216,16 @@
 				<PropertyInfo>
 					<CommlPropertyInfo SubLocationRef='L1B1'>
 						<OccupancyClassCd xmlns:p7='http://www.w3.org/2001/XMLSchema-instance' p7:nil='true' />
-						<ClassCd>987</ClassCd>
+						<ClassCd>987000</ClassCd>
 						<CommlCoverage>
 							<CurrentTermAmt>
-								<Amt>564</Amt>
+								<Amt>574</Amt>
 							</CurrentTermAmt>
 							<CoverageCd>BMEBS</CoverageCd>
 						</CommlCoverage>
 						<CommlCoverage>
 							<CurrentTermAmt>
-								<Amt>5640</Amt>
+								<Amt>5740</Amt>
 							</CurrentTermAmt>
 							<CoverageCd>BLDG</CoverageCd>
 							<Limit>
@@ -242,7 +241,7 @@
 								<DeductibleAppliesToCd>AllOth</DeductibleAppliesToCd>
 								<FormatPct xmlns:p9='http://www.w3.org/2001/XMLSchema-instance' p9:nil='true' />
 							</Deductible>
-							<Rate>0.912</Rate>
+							<Rate>0.998</Rate>
 							<CommlCoverageSupplement>
 								<CoverageSubCd>BASIC</CoverageSubCd>
 								<CoinsurancePct>80</CoinsurancePct>
@@ -250,7 +249,7 @@
 						</CommlCoverage>
 						<CommlCoverage>
 							<CurrentTermAmt>
-								<Amt>6150</Amt>
+								<Amt>2150</Amt>
 							</CurrentTermAmt>
 							<CoverageCd>BPP</CoverageCd>
 							<Limit>
@@ -266,7 +265,7 @@
 								<DeductibleAppliesToCd>AllOth</DeductibleAppliesToCd>
 								<FormatPct xmlns:p9='http://www.w3.org/2001/XMLSchema-instance' p9:nil='true' />
 							</Deductible>
-							<Rate>0.922</Rate>
+							<Rate>0.877</Rate>
 							<CommlCoverageSupplement>
 								<CoverageSubCd>BASIC</CoverageSubCd>
 								<CoinsurancePct>80</CoinsurancePct>
@@ -282,7 +281,7 @@
 									<Amt>100000</Amt>
 								</FormatCurrencyAmt>
 							</Limit>
-							<Rate>0.777</Rate>
+							<Rate>0.666</Rate>
 							<CommlCoverageSupplement>
 								<CoverageSubCd>BASIC</CoverageSubCd>
 							</CommlCoverageSupplement>
