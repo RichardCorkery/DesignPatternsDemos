@@ -9,3 +9,4 @@ Demos of some of my most commonly used Design Patterns
 
 ## Highlights of other tech usage:
 - Self Documented Code (Clean Code)
+- Orchestrator Design Pattern
