@@ -12,8 +12,9 @@ public partial class RulesEngineDemo
     [Inject]
     public IPolicyConverterRulesOrchestrator PolicyConverterRulesOrchestrator { get; set; }
 
-    public string Acord { get; set; } = string.Empty;
-    public string Policy { get; set; } = string.Empty;
+    public string AcordXml { get; set; } = string.Empty;
+
+    public string PolicyJson { get; set; } = string.Empty;
 
     public string PageTitlePolicyNumber { get; set; } = string.Empty;
 
@@ -28,7 +29,7 @@ public partial class RulesEngineDemo
 
             var acordXdoc = XDocument.Parse(acordXml);
 
-            Acord = acordXdoc.ToString();
+            AcordXml = acordXdoc.ToString();
         }
         catch (Exception ex)
         {
@@ -40,17 +41,17 @@ public partial class RulesEngineDemo
     private void ConvertToPolicy()
     {
         SetMessage(string.Empty, string.Empty);
-        Policy = string.Empty;
+        PolicyJson = string.Empty;
 
         try
         {
-            var policy = PolicyConverterRulesOrchestrator.Convert(Acord);
+            var policy = PolicyConverterRulesOrchestrator.Convert(AcordXml);
 
             var options = new JsonSerializerOptions
             {
                 WriteIndented = true //Pretty print using indent, white space, new line, etc.
             };
-            Policy = JsonSerializer.Serialize(policy, options);
+            PolicyJson = JsonSerializer.Serialize(policy, options);
 
             PageTitlePolicyNumber = policy.PolicyNumber;
         }

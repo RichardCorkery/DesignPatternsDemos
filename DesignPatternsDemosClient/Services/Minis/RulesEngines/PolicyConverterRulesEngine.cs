@@ -4,7 +4,7 @@ namespace DesignPatternsDemosClient.Services.Minis.RulesEngines;
 
 public interface IPolicyConverterRulesEngine
 {
-    public PolicyRoot ToPolicy(Acord acord);
+    public PolicyRoot ToPolicy(Acord? acord);
 }
 public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
 {
@@ -15,7 +15,7 @@ public class PolicyConverterRulesEngine: IPolicyConverterRulesEngine
         _rules.AddRange(rules);
     }
 
-    public PolicyRoot ToPolicy(Acord acord)
+    public PolicyRoot ToPolicy(Acord? acord)
     {
         ArgumentNullException.ThrowIfNull(acord);
         
