@@ -25,7 +25,7 @@ public partial class RulesEngineDemo
     {            
         try
         {
-            var acordXml = await HttpClient.GetStringAsync("sample-data/acordPolicy.xml");
+            var acordXml = await HttpClient.GetStringAsync("sample-data/acordPolicyV1.xml");
 
             var acordXdoc = XDocument.Parse(acordXml);
 
@@ -34,6 +34,8 @@ public partial class RulesEngineDemo
         catch (Exception ex)
         {
             SetMessage("An error occurred while initializing the page", CssClass.AlertDanger);
+            //ToDo: Add Logging.  Might be a little too much since this is just a demo and a Blazor Wasm
+            //      Maybe create stand alone demo for this concept
             Console.WriteLine(ex.Message);
         }
     }
@@ -63,6 +65,7 @@ public partial class RulesEngineDemo
     }
 
     //ToDo: Make the Message a Component
+    //      If so, can I use Error Boundry
     private void SetMessage(string messageText, string alertClass)
     {
         Message = messageText;
