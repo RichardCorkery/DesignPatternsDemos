@@ -62,6 +62,7 @@ public partial class RulesEngineDemo
         }
     }
 
+    //ToDo: Make the Message a Component
     private void SetMessage(string messageText, string alertClass)
     {
         Message = messageText;
