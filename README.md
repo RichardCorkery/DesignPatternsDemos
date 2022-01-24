@@ -1,4 +1,4 @@
-# design-patterns-demos
+# DesignPatternsDemos
 Demos of some of my most commonly used Design Patterns
 
 ## Highlights of "new" tech usage:
